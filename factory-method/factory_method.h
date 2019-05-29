@@ -1,3 +1,12 @@
+/**
+ * Factory Method Pattern
+ * The factory method pattern is used to define an interface for creation of
+ * instances without the need to know the exact subclass that is being
+ * instanciated.
+ *
+ * 2019 by Martin Penckert
+ */
+
 #pragma once
 
 #include <iostream>
@@ -39,7 +48,8 @@ public:
 class Indian : public Manufacturer
 {
 protected:
-    virtual void craftBike()
+    // override the factory method
+    void craftBike()
     {
         bike = std::make_shared<Scout>("Bobber");
     }
@@ -48,7 +58,8 @@ protected:
 class Honda : public Manufacturer
 {
 protected:
-    virtual void craftBike()
+    // override the factory method
+    void craftBike()
     {
         bike = std::make_shared<Rebel>(500);
     }
